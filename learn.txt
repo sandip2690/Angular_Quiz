@@ -1,0 +1,8 @@
+.well .well-sm : add border and backgroud
+.form-inline : for inline content
+.image-responsive : set as parent
+.image-rounded
+.pull-left : float left
+.pull-right : float right
+| pipe symbol : use for applying filter
+How to work filter : The ng-repeat and all other directives are constantly updating when you inputs are given.

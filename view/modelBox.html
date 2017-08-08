@@ -1,0 +1,31 @@
+<!-- <div class="modal" id="turtle-info"> -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h2>{{list.activeTurtle.type}}</h2>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <img class="img-rounded img-responsive" src="{{list.activeTurtle.image_url}}"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Locations: </strong>{{list.activeTurtle.locations}}</p>
+            <p><strong>Size: </strong>{{list.activeTurtle.size}}</p>
+            <p><strong>Average Lifespan: </strong>{{list.activeTurtle.lifespan}}</p>
+            <p><strong>Diet: </strong>{{list.activeTurtle.diet}}</p>
+          </div>
+          <div class="col-xs-12">
+              <p>{{list.activeTurtle.description}}</p>
+              <button class="btn btn-danger pull-right"
+              data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->

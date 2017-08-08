@@ -1,2 +1,31 @@
-<h2>testtttt</h2>
-
+<div ng-controller="listCtrl as list" ng-hide="list.quizActive">
+    <div class="form-inline well well-sm clearfix">
+        <span class="glyphicon glyphicon-search"></span>
+        <input type="text" class="form-control" placeholder="search.." ng-model="list.search">
+        <button class="btn btn-warning pull-right" ng-click="list.activateQuiz()">
+         <strong>Start Quiz</strong>
+       </button>
+    </div>
+    <div class="row">
+      <div class="col-sm-6" ng-repeat="turtle in list.data | filter:list.search">
+           <div class="well well-sm">
+             <div class="row">
+                  <div class="col-md-6">
+                        <img class="img-responsive img-rounded well-image" ng-src="{{turtle.image_url}}" alt="img not found">
+                  </div>
+                  <div class="col-md-6">
+                       <h4>{{turtle.type}}</h4>
+                       <p>{{turtle.locations}}</p>
+                       <p>{{turtle.size}}</p>
+                       <p>{{turtle.lifepan}}</p>
+                       <p>{{turtle.lifespan}}</p>
+                       <div class="btn btn-primary pull-right"
+                        data-toggle="modal" data-target="#turtle-info"
+                        ng-click="list.changeActiveTurtle(turtle)">Learn More</div>
+                  </div>
+             </div>
+           </div>
+      </div>
+    </div>
+    <div class="modal" id="turtle-info" ng-include="'view/modelBox.html'"></div>
+</div>
