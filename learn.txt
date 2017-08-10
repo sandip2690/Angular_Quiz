@@ -6,3 +6,6 @@
 .pull-right : float right
 | pipe symbol : use for applying filter
 How to work filter : The ng-repeat and all other directives are constantly updating when you inputs are given.
+- controller can't communicate each other means they does not share varibale to each other.
+angular services (factroy) - allow to communicate between controller
+(Link - https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/)
