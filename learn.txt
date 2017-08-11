@@ -9,3 +9,8 @@ How to work filter : The ng-repeat and all other directives are constantly updat
 - controller can't communicate each other means they does not share varibale to each other.
 angular services (factroy) - allow to communicate between controller
 (Link - https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/)
+
+
+
+Important Link
+https://stackoverflow.com/questions/23074875/angularjs-factory-and-service
