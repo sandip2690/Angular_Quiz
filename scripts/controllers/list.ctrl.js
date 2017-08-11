@@ -1,4 +1,4 @@
-quizApp.controller('listCtrl',function(){
+quizApp.controller('listCtrl',function(quizMetricsFact){
     var vm = this;
     vm.data = turtlesData;
     vm.activeTurtle = {};
@@ -8,6 +8,7 @@ quizApp.controller('listCtrl',function(){
         vm.activeTurtle = index;
     };
     vm.activateQuiz = function(){
-      vm.quizActive = true;
+      // vm.quizActive = true;
+      quizMetricsFact.changeState = true;
     };
 });
