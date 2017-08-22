@@ -1,6 +1,3 @@
-quizApp.controller('quizCtrl',function($scope,quizMetricsFact){
+quizApp.controller('quizCtrl',function($scope){
   $scope.data = "list.activeTurtle";
-
-console.log(quizMetricsFact);
-
 });
