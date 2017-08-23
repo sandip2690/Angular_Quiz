@@ -1,12 +1,12 @@
 quizApp.factory('quizMetricsFact',function(){
-  quizActive = true;
-  var quizObj = {
-        quizActive :true,
-        changeState: changeState
-  };
+
+	  var quizObj = {
+	        isShowQuiz : false,
+	        changeState: fnChangeState
+	  };
       return quizObj;
 
-    function changeState(state){
-      quizObj.changeState = state;
+    function fnChangeState(state){
+      quizObj.isShowQuiz = state;
     }
 });

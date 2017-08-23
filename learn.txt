@@ -11,6 +11,17 @@ angular services (factroy) - allow to communicate between controller
 (Link - https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/)
 
 
+------------------------------------
+5
+Please note that you're trying to get access to your factory from the HTML view.
+
+This is impossible in AngularJS.
+
+You have to bind entities to the $scope in your controller. And then you get access to the entities in your views through the $scope.
+
+The $scope is the glue between controller and view in AngularJS. This pattern is close to MVVM in .NET technologies like Silverlight or WPF ...
+
+---------------------------------------
 
 Important Link
 https://stackoverflow.com/questions/23074875/angularjs-factory-and-service

@@ -1,11 +1,12 @@
-quizApp.controller('listCtrl',function(){
+quizApp.controller('listCtrl',function($scope,quizMetricsFact,dataServices){
     var vm = this;
-    vm.data = turtlesData;
+    vm.data = dataServices.data;
     vm.search = "";
-    vm.learMoreBtnClk = function(index){
-        vm.activeTurtleObj = index;
+    vm.learMoreBtnClk = function(currentObj){
+        vm.activeTurtleObj = currentObj;
     };
     vm.startQuizBtnClk = function(){
-       vm.isShowQuiz = true;
+       quizMetricsFact.changeState(true)
     };
-});
+     vm.quizMetricFactObj = quizMetricsFact; // assign factoryObj to scope
+    });

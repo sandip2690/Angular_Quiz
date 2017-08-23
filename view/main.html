@@ -1,7 +1,8 @@
-<div ng-controller="listCtrl as list" ng-hide="list.isShowQuiz">
+<div ng-controller="listCtrl as list" ng-hide="list.quizMetricFactObj.isShowQuiz">
+
     <div class="form-inline well well-sm clearfix">
-        <span class="glyphicon glyphicon-search"></span>
-        <input type="text" class="form-control" placeholder="search.." ng-model="list.search">
+          <span class="glyphicon glyphicon-search"></span>
+          <input type="text" class="form-control" placeholder="search.." ng-model="list.search">
         <button class="btn btn-warning pull-right" ng-click="list.startQuizBtnClk()">
          <strong>Start Quiz</strong>
        </button>
