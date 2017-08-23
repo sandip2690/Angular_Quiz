@@ -1,8 +1,8 @@
-<div ng-controller="listCtrl as list" ng-hide="list.quizActive">
+<div ng-controller="listCtrl as list" ng-hide="list.isShowQuiz">
     <div class="form-inline well well-sm clearfix">
         <span class="glyphicon glyphicon-search"></span>
         <input type="text" class="form-control" placeholder="search.." ng-model="list.search">
-        <button class="btn btn-warning pull-right" ng-click="list.activateQuiz()">
+        <button class="btn btn-warning pull-right" ng-click="list.startQuizBtnClk()">
          <strong>Start Quiz</strong>
        </button>
     </div>
@@ -21,7 +21,7 @@
                        <p>{{turtle.lifespan}}</p>
                        <div class="btn btn-primary pull-right"
                         data-toggle="modal" data-target="#turtle-info"
-                        ng-click="list.changeActiveTurtle(turtle)">Learn More</div>
+                        ng-click="list.learMoreBtnClk(turtle)">Learn More</div>
                   </div>
              </div>
            </div>
@@ -29,3 +29,5 @@
     </div>
     <div class="modal" id="turtle-info" ng-include="'view/modelBox.html'"></div>
 </div>
+
+<div class="quizSection" ng-include="'view/quizView.html'"></div>

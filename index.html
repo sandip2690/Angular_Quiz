@@ -3,20 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Quiz App</title>
+      <!--  Third Party Plugin-->
       <script src="scripts/vendor/angular.min.js" charset="utf-8"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="scripts/vendor/jquery.min.js"></script>
+      <script src="scripts/vendor/bootstrap.min.js"></script>
+      <!--  Third Party Plugin-->
       <script src="scripts/app.js" charset="utf-8"></script>
-      <script src="content/data/data.js" charset="utf-8"></script>
-
-      <!-- Controllers -->
+      <!-- controller -->
       <script src="scripts/controllers/list.ctrl.js" charset="utf-8"></script>
-
+      <script src="scripts/controllers/quiz.ctrl.js" charset="utf-8"></script>
+      <!-- controller -->
+      <!--  factories-->
+      <script src="scripts/factories/quizmetrics.fact.js" charset="utf-8"></script>
+      <!--  factories-->
+      <!-- Styles -->
       <link rel="stylesheet" href="style/bootstrap.min.css">
       <link rel="stylesheet" href="style/custom.css">
+      <!-- Styles -->
+      <!-- Content -->
+      <script src="content/data/data.js" charset="utf-8"></script>
+      <!-- Content-->
   </head>
   <body ng-app="myApp">
-       <div class="container" ng-include="'view/main.html'">
-	   
+       <div class="container" ng-include="'view/main.html'">   
   </body>
 </html>
