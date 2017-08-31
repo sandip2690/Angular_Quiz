@@ -132,7 +132,7 @@ var correctAnswers = [1, 2, 3, 0, 2, 0, 3, 2, 0, 3];
                    answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
                }
            ],
-           selected: null,
+           selected: 'tttttt',
            correct: null
        },
        {
