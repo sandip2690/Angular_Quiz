@@ -1,7 +1,7 @@
 quizApp.factory('dataServices',function(){
   var dataObj = {
-       data : turtlesData
-  }
-
+      turtleData : turtlesData,
+      questionData : quizQuestions
+  };
   return dataObj;
 });

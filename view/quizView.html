@@ -1,3 +1,51 @@
 <div class="quiz" ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetricFactObj.isShowQuiz">
+  <div class="row">
+    <div class="col-xs-8">
+      <h2>Progress</h2>
+      <div class="btn-toolbar">
+        <button class="btn" ng-repeat="currentQuestionObj in quiz.quizDataObj" ng-class="{'btn-info' :currentQuestionObj.selected !==null,'btn-danger':currentQuestionObj.selected === null}">
+                  <span class="glyphicon"
+                    ng-class="{'glyphicon-pencil': currentQuestionObj.selected !==null , 'glyphicon-question-sign':currentQuestionObj.selected === null }"
+                  ></span>
+             </button>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <h4>Legend:</h4>
+      <div class="col-sm-4">
+        <button class="btn btn-info">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+        <p>Answered</p>
+      </div>
+      <div class="col-sm-4">
+        <button class="btn btn-danger">
+                <span class="glyphicon glyphicon-question-sign"></span>
+            </button>
+        <p>Unanswered</p>
+      </div>
+    </div>
+  </div>
 
-</div>	
+
+<div class="row">
+    <h3>Question:</h3>
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- Question Area -->
+                <h4>{{quiz.quizDataObj[quiz.activeQuestionCount].text}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-sm-6" ng-repeat = "ans in quiz.quizDataObj[quiz.activeQuestionCount].possibilities">
+    <div class="answer">
+      {{ans.answer}}
+    </div>
+  </div>
+</div>
+  <button class="btn btn-warning pull-right" ng-click="quiz.questionAnsweredFn()">Continue</button>
+
+</div>
