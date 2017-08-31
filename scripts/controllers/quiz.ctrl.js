@@ -11,10 +11,10 @@ quizApp.controller('quizCtrl',function($scope,quizMetricsFact,dataServices){
 		 vm.setActiveQuestion();
 	 };
 
-	 function setActiveQuestion(){
+	 vm.setActiveQuestion = function(){
 		 var quizLength	 = vm.quizDataObj.length - 1;
 		 var breakOut = false;
-		 console.log('yess');
+
 		 while(!breakOut){
        if(vm.activeQuestionCount < quizLength){
 				 		vm.activeQuestionCount++;
