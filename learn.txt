@@ -25,3 +25,17 @@ The $scope is the glue between controller and view in AngularJS. This pattern is
 
 Important Link
 https://stackoverflow.com/questions/23074875/angularjs-factory-and-service
+
+
+
+ng-hide and ng-show
+  -it's just adding display:none to the css for element
+  -the element is exsist in the dom but cann't seen on the screen
+  -accept boolean value
+ng-if
+  -accept boolean value
+  -it's does not render in the dom still not true condition
+
+ng-repeat
+  - we can use as a loop
+  - $index is use for current index

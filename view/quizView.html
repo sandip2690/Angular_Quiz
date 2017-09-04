@@ -3,7 +3,7 @@
     <div class="col-xs-8">
       <h2>Progress</h2>
       <div class="btn-toolbar">
-        <button class="btn" ng-repeat="currentQuestionObj in quiz.quizDataObj" ng-class="{'btn-info' :currentQuestionObj.selected !==null,'btn-danger':currentQuestionObj.selected === null}">
+        <button class="btn" ng-repeat="currentQuestionObj in quiz.quizDataObj" ng-class="{'btn-info' :currentQuestionObj.selected !==null,'btn-danger':currentQuestionObj.selected === null}" ng-click="quiz.setActiveQuestion($index)">
                   <span class="glyphicon"
                     ng-class="{'glyphicon-pencil': currentQuestionObj.selected !==null , 'glyphicon-question-sign':currentQuestionObj.selected === null }"
                   ></span>
@@ -28,24 +28,34 @@
   </div>
 
 
-<div class="row">
+  <div class="row">
     <h3>Question:</h3>
     <div class="well well-sm">
-        <div class="row">
-            <div class="col-xs-12">
-                <!-- Question Area -->
-                <h4>{{quiz.quizDataObj[quiz.activeQuestionCount].text}}</h4>
-            </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- Question Area -->
+          <h4>{{quiz.quizDataObj[quiz.activeQuestionCount].text}}</h4>
         </div>
-    </div>
-</div>
-<div class="row">
-  <div class="col-sm-6" ng-repeat = "ans in quiz.quizDataObj[quiz.activeQuestionCount].possibilities">
-    <div class="answer">
-      {{ans.answer}}
+      </div>
     </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col-sm-6" ng-repeat="ans in quiz.quizDataObj[quiz.activeQuestionCount].possibilities" ng-if="quiz.quizDataObj[quiz.activeQuestionCount].type === 'text'">
+      <h4 class="answer" ng-class="{'btn-info' : $index === quiz.quizDataObj[quiz.activeQuestionCount].selected}" ng-click="quiz.selectAnswerFn($index)">
+      {{ans.answer}}
+    </h4>
+    </div>
+
+    <div class="col-sm-6" ng-repeat="ans in quiz.quizDataObj[quiz.activeQuestionCount].possibilities" ng-if="quiz.quizDataObj[quiz.activeQuestionCount].type === 'image'">
+      <div class="image-answer"
+      ng-class="{'image-selected': $index === quiz.quizDataObj[quiz.activeQuestionCount].selected}"
+                  ng-click="quiz.selectAnswerFn($index)"
+      >
+        <img class="well-image img-rounded" ng-src="{{ans.answer}}" alt="">
+      </div>
+    </div>
+
+  </div>
   <button class="btn btn-warning pull-right" ng-click="quiz.questionAnsweredFn()">Continue</button>
 
 </div>
