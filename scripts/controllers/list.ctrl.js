@@ -6,7 +6,7 @@ quizApp.controller('listCtrl',function($scope,quizMetricsFact,dataServices){
         vm.activeTurtleObj = currentObj;
     };
     vm.startQuizBtnClk = function(){
-       quizMetricsFact.changeState(true);
+       quizMetricsFact.isShowQuiz = true;
     };
-     vm.quizMetricFactObj = quizMetricsFact; // assign factoryObj to scope
+        vm.quizMetricFactObj = quizMetricsFact; // assign factoryObj to scope
     });

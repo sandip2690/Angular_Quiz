@@ -1,45 +1,27 @@
-quizApp.controller('quizCtrl',function($scope,quizMetricsFact,dataServices){
-	 var vm = this;
-	 vm.quizMetricFactObj = quizMetricsFact; // assign factoryObj
-  	vm.quizDataObj = dataServices.questionData;
-	 vm.activeQuestionCount = 0;
-	 vm.error = false; 
-	 var numQuestionsAnswered = 0;
-	 vm.questionAnsweredFn = function(){
-	 	//debugger
-		 if(vm.quizDataObj[vm.activeQuestionCount].selected !== null){
-			 	vm.numQuestionsAnswered++;
-		 }
-		 vm.setActiveQuestion();
-	 };
+quizApp.controller('quizCtrl', function($scope, quizMetricsFact, dataServices) {
+        var vm = this;
+        vm.quizMetricFactObj = quizMetricsFact;
+        vm.quizDataObj = dataServices.questionData;
+        vm.activeQuestionCount = 0;
+        vm.selectedFlags = false;
+        vm.contBtnClick = function(){
+            
+            if(vm.quizDataObj[vm.activeQuestionCount].selected !== null){
+               vm.quizMetricFactObj.submitAnswer(vm.activeQuestionCount);
 
-	 vm.setActiveQuestion = function(index){
+               vm.activeQuestionCount++; 
+            }
+            else{
+                vm.selectedFlags = true;
+            }
+            if(vm.activeQuestionCount === vm.quizDataObj.length){
+                vm.quizMetricFactObj.showResult = true;     
+            }
 
-  if(index === undefined){
-	 	 var quizLength	 = vm.quizDataObj.length - 1;
-		 var breakOut = false;
+        }
+        vm.currentAnsOptfn = function(index){
+            vm.quizDataObj[vm.activeQuestionCount].selected = index;
+            vm.selectedFlags = false;
+        }
 
-		 while(!breakOut){
-       		if(vm.activeQuestionCount != quizLength){
-						 		vm.activeQuestionCount++; // increment
-					 }else {
-					 			vm.activeQuestionCount = 0; // last position
-					 }
-
-			 if(vm.quizDataObj[vm.activeQuestionCount].selected === null){
-				 breakOut = true;
-			 }
-
-			 if(vm.activeQuestionCount === 0){
-			 		vm.error = true;
-	 			}
-		 }
-	 }
-	 else{
-		 vm.activeQuestionCount = index;
-	 }
-	 };
-	 vm.selectAnswerFn = function(selectedIndex){
-		 	vm.quizDataObj[vm.activeQuestionCount].selected =  selectedIndex;
-	 };
-});
+    });
